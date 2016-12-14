@@ -11,6 +11,9 @@ class TreeNode:
 
 def read_tree(s):
     '''Read a tree from a string of input
+    -1's indicate null/None nodes
+
+    example: `t = lib.read_tree('1 2 3 -1 -1 4 -1 -1 5 -1 -1')`
     '''
     a = list(map(int, s.split()))
     len_a = len(a)
@@ -76,7 +79,7 @@ def get_depth(root):
     return 1 + max(get_depth(root.left), get_depth(root.right))
 
 
-def print_graph(root):
+def print_tree(root):
     '''    1
          /   \
        2       4
